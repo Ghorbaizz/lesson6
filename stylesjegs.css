@@ -1,0 +1,150 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
+
+.p-navbar {
+    position: sticky;
+    top: 0px;
+    z-index: 20;
+}
+
+.navbar {
+    background: #000f02af;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 10px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 20px rgba(0, 190, 25, 0.4);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+.container1 {
+    max-width: 800px;
+    padding: 10px 20px;
+    margin: 100px auto;
+    margin-bottom: 400px;
+}
+
+.container2 {
+    max-width: 800px;
+    padding: 10px 20px;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 400px;
+}
+
+.container3 {
+    max-width: 800px;
+    padding: 10px 20px;
+    margin: 100px 10px;
+    margin-bottom: 400px;
+}
+
+.title {
+    font-size: 3rem;
+    color: rgba(0, 190, 25, 0.4);
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.navlogo {
+    width: 75px;
+}
+
+.sartitle {
+    font-size: 1.9rem;
+    margin: 30px;
+    border-bottom: 1px solid rgba(0, 190, 25, 0.4);
+}
+
+
+
+@keyframes harekat {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.moving {
+    opacity: 30%;
+    animation: 5s harekat linear infinite;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+
+/* تنظیمات canvas سه‌بعدی (روی همه صفحه فیکس میشه) */
+canvas.three-scene {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+
+/* حالت موبایل */
+@media (max-width: 750px) {
+    .navbar {
+        border-radius: 0;
+        margin: 0px;
+    }
+
+    * {
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 800px) {
+    * {
+        font-size: 1.01rem;
+    }
+
+}
+
+@media(max-width: 450px) {
+    * {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ================= SCROLL FADE (RTL) ================= */
+
+/* حالت اولیه: مخفی + سمت راست */
+.fade-rtl {
+    opacity: 0;
+    transform: translateX(100px);
+    transition:
+        opacity 1.9s ease,
+        transform 1.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+/* وقتی وارد ویو میشه */
+.fade-rtl.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* اگر خواستی وقتی خارج میشه دوباره محو بشه */
+.fade-rtl.fade-out {
+    opacity: 0;
+    transform: translateX(-60px);
+    /* خروج به چپ */
+}
